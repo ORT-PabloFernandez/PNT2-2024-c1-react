@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./User.css";
 import { useState } from "react";
 
@@ -17,7 +18,7 @@ export default function User(props) {
   return (
     <li className="user-item" onClick={HanlderClick_User}>
       <div className="card user-item__content">
-        <a href="#">
+        <Link to={`/users/${props.Id}`}>
           <div className="user-item__image avatar">
             <img src={props.Picture} alt="{props.UserName}" />
           </div>
@@ -26,7 +27,7 @@ export default function User(props) {
             <h2>{props.Title}</h2>
             <h3>{contador}</h3>
           </div>
-        </a>
+        </Link>
       </div>
     </li>
   );
